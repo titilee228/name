@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂工具 - 课间倒计时</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">课间倒计时</h1>
+        </header>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-btn">返回主页</a>
+            <a href="roll-call.html" class="nav-btn">随机点名</a>
+            <a href="students.html" class="nav-btn">学生管理</a>
+        </nav>
+        
+        <main class="main-content">
+            <!-- 倒计时显示 -->
+            <div id="timerDisplay" class="timer-display">00:00:00</div>
+            
+            <!-- 时间到提示 -->
+            <div id="timeUpAlert" class="alert alert-danger hidden" style="font-size: 24px; padding: 20px;">
+                ⏰ 时间到！
+                <button id="stopBellBtn" class="btn btn-warning" style="margin-left: 15px;">停止铃声</button>
+            </div>
+            
+            <!-- 快捷时长按钮 -->
+            <div class="btn-group" style="margin-top: 20px;">
+                <button class="btn btn-primary quick-btn" data-minutes="5">5分钟</button>
+                <button class="btn btn-primary quick-btn" data-minutes="8">8分钟</button>
+                <button class="btn btn-primary quick-btn" data-minutes="10">10分钟</button>
+                <button class="btn btn-primary quick-btn" data-minutes="15">15分钟</button>
+            </div>
+            
+            <!-- 自定义时长 -->
+            <div style="display: flex; gap: 10px; justify-content: center; margin: 20px 0;">
+                <input type="number" id="customMinutes" class="input" placeholder="自定义分钟数" min="1" style="width: 150px;">
+                <button id="setCustomBtn" class="btn btn-success">设置</button>
+            </div>
+            
+            <!-- 控制按钮 -->
+            <div class="btn-group">
+                <button id="startBtn" class="btn btn-success" style="font-size: 18px; padding: 15px 30px;">开始</button>
+                <button id="pauseBtn" class="btn btn-warning hidden" style="font-size: 18px; padding: 15px 30px;">暂停</button>
+                <button id="resetBtn" class="btn btn-danger" style="font-size: 18px; padding: 15px 30px;">重置</button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/data.js"></script>
+    <script src="js/timer.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂工具 - 随机点名</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">随机点名</h1>
+        </header>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-btn">返回主页</a>
+            <a href="students.html" class="nav-btn">学生管理</a>
+            <a href="timer.html" class="nav-btn">课间倒计时</a>
+        </nav>
+        
+        <main class="main-content">
+            <div class="form-group">
+                <label>选择班级：</label>
+                <select id="classSelect" class="select" style="width: 100%;">
+                    <option value="">-- 请选择班级 --</option>
+                </select>
+            </div>
+            
+            <div class="btn-group">
+                <button id="rollBtn" class="btn btn-primary" style="font-size: 18px; padding: 15px 40px;">
+                    开始点名
+                </button>
+            </div>
+            
+            <div id="message" class="alert hidden"></div>
+            
+            <div class="roll-display">
+                <div id="avatarDisplay" class="avatar avatar-male">👦</div>
+                <div id="nameDisplay" class="roll-name">等待点名...</div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/data.js"></script>
+    <script src="js/roll-call.js"></script>
+</body>
+</html>

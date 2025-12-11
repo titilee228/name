@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂工具 - 学生管理</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">学生管理</h1>
+        </header>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-btn">返回主页</a>
+            <a href="roll-call.html" class="nav-btn">随机点名</a>
+            <a href="timer.html" class="nav-btn">课间倒计时</a>
+        </nav>
+        
+        <main class="main-content">
+            <div id="message" class="alert hidden"></div>
+            
+            <!-- 添加班级 -->
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <h3 style="margin-bottom: 10px;">添加新班级</h3>
+                <form id="addClassForm" style="display: flex; gap: 10px;">
+                    <input type="text" id="className" class="input" placeholder="班级名称" required style="flex: 1;">
+                    <button type="submit" class="btn btn-success">添加班级</button>
+                </form>
+            </div>
+            
+            <!-- 添加学生 -->
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <h3 style="margin-bottom: 10px;">添加新学生</h3>
+                <form id="addStudentForm" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <input type="text" id="studentName" class="input" placeholder="学生姓名" required>
+                    <select id="studentGender" class="select" required>
+                        <option value="male">男生</option>
+                        <option value="female">女生</option>
+                    </select>
+                    <select id="addStudentClass" class="select" required>
+                        <option value="">-- 选择班级 --</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">添加学生</button>
+                </form>
+            </div>
+            
+            <!-- 班级列表 -->
+            <div id="classesContainer"></div>
+            
+            <!-- 重置数据 -->
+            <div style="margin-top: 20px; text-align: center;">
+                <button class="btn btn-warning" onclick="if(confirm('确定重置所有数据吗？')){resetToDefault();location.reload();}">
+                    重置为默认数据
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/data.js"></script>
+    <script src="js/students.js"></script>
+</body>
+</html>
